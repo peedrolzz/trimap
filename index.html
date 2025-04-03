@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TriMap</title>
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <img class="logo" src="img/logo.png" alt="Logo" />
+      <a href="index.html" style="text-decoration: none">
+        <h1>TriMap</h1>
+      </a>
+      <button onclick="window.location.href='login.html'" class="header-btn">
+        Login
+      </button>
+    </header>
+
+    <main>
+      <!-- Mapa -->
+      <div id="map"></div>
+
+      <!-- Navegação de filtros -->
+      <nav>
+        <button id="turismoBtn" class="btn" onclick="showMarkers('turismo')">
+          Pontos Turísticos
+        </button>
+        <button id="lojasBtn" class="btn" onclick="showMarkers('lojas')">
+          Lojas
+        </button>
+        <button id="hospitaisBtn" class="btn" onclick="showMarkers('hospitais')">
+          Hospitais
+        </button>
+        <button id="resturantesBtn" class="btn" onclick="showMarkers('resturantes')">
+          Restaurantes
+        </button>
+        <button id="hoteisBtn" class="btn" onclick="showMarkers('hoteis')">
+          Hotéis
+        </button>
+      </nav>
+
+      <!-- Caixa de informações -->
+      <div id="info-boxes">
+        <div id="barracao-info" class="info-box">
+          <canvas id="barracao-chart" class="chart"></canvas>
+        </div>
+        <div id="dionisio-info" class="info-box">
+          <canvas id="dionisio-chart" class="chart"></canvas>
+        </div>
+        <div id="bernardo-info" class="info-box">
+          <canvas id="bernardo-chart" class="chart"></canvas>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span id="modal-close" class="modal-close">&times;</span>
+          <h2 id="modal-title">Título do Modal</h2>
+          <div id="modal-content">Conteúdo do Modal</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
